@@ -1,0 +1,88 @@
+.pokedex-scroll-container {
+  display: flex;             /* Pone todo en una línea */
+  overflow-x: auto;          /* Activa el scroll horizontal */
+  gap: 10px;                 /* Espacio entre cartas */
+  padding: 0 20px;
+  scroll-behavior: smooth;   /* Suavidad al mover */
+  scrollbar-width: none;
+}
+
+p {
+  font-size: 12px;
+  color: aliceblue;
+}
+
+.pokedex-scroll-container::-webkit-scrollbar {
+  display: none;
+}
+
+.poke-card {
+  min-width: 200px;          /* Ancho fijo para que no se aplasten */
+  background-color: #313131; /* Fondo gris oscuro */
+  border-radius: 10px;
+  padding: 20px;
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+
+.poke-card:hover {
+  background-color: #000;    /* Se oscurece más */
+  transform: translateY(-5px); /* Sube un poquito */
+}
+
+.poke-img {
+  width: 120px;
+  height: 120px;
+  transition: transform 0.3s;
+}
+
+.poke-card:hover .poke-img {
+  transform: scale(1.15);    /* La imagen crece */
+}
+
+.carousel-wrapper {
+  position: relative;
+}
+
+.btn-flecha {
+  position: absolute;       /* Flotan sobre el contenido */
+  top: 50%;                 /* Se centran verticalmente */
+  transform: translateY(-50%); /* Ajuste fino del centro */
+  z-index: 10;              /* Se aseguran de estar POR ENCIMA de las fotos */
+
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;       /* Redondos */
+  border: none;
+  background-color: rgba(255, 255, 255, 0.8); /* Blanco semi-transparente */
+  box-shadow: 0 4px 6px rgba(0,0,0,0.3);
+  font-size: 1.5rem;
+  color: #333;
+  transition: all 0.2s;
+
+  /* Flex para centrar la flechita dentro del circulo */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* POSICIONES */
+.btn-left {
+  left: 10px; /* Pegado a la izquierda */
+}
+
+.btn-right {
+  right: 10px; /* Pegado a la derecha */
+}
+
+/* EFECTO HOVER */
+.btn-flecha:hover {
+  background-color: white;
+  transform: translateY(-50%) scale(1.1); /* Crece un poco */
+  cursor: pointer;
+}
+
+/* EFECTO CLICK */
+.btn-flecha:active {
+  transform: translateY(-50%) scale(0.95);
+}

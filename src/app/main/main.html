@@ -40,8 +40,11 @@
       </div>
 
       <div class="card border-0 shadow-sm hover-card bg-info text-white">
-        <div style="height: 180px; background: #17a2b8;" class="card-img-top d-flex align-items-center justify-content-center">
-          <i class="bi bi-gift display-4"></i>
+        <div class="card-img-top d-flex align-items-center justify-content-center"
+             style="height: 200px; background: #3b4cca;
+            background-image: url('https://www.pokemon.com/static-assets/content-assets/cms2/img/video-games/_tiles/pokemon-go/2025/12/18/pokemon-go-169.png');
+            background-size: cover;
+            background-position: center;">
         </div>
         <div class="card-body">
           <h5 class="card-title">Evento Fiestas Invernales Pokemon Go</h5>
@@ -82,6 +85,33 @@
         </div>
       </div>
     </div>
+  </div>
+
+  <div class="container mt-5 mb-2">
+    <h3 class="text-secondary">Pokémon destacados</h3>
+  </div>
+
+  <div class="carousel-wrapper position-relative">
+
+    <button class="btn-flecha btn-left" (click)="scrollLeft()">
+      <i class="bi bi-chevron-left"></i>
+    </button>
+
+    <div #scrollContainer class="pokedex-scroll-container bg-dark py-4">
+      <div class="poke-card text-center" *ngFor="let poke of pokemons">
+        <img [src]="poke.img" [alt]="poke.name" class="poke-img mb-2">
+        <div class="poke-info">
+          <p class="d-block">N.º {{ poke.id }}</p>
+          <h5 class="text-white fw-bold">{{ poke.name }}</h5>
+          <span class="badge bg-secondary mt-1">{{ poke.type }}</span>
+        </div>
+      </div>
+    </div>
+
+    <button class="btn-flecha btn-right" (click)="scrollRight()">
+      <i class="bi bi-chevron-right"></i>
+    </button>
+
   </div>
 
 </div>
